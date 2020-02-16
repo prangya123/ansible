@@ -1,0 +1,18 @@
+---
+ - name: This is a simple play for demo
+   hosts: all
+   become: yes
+   gather_facts: false
+   tasks:
+   - name: This task is to ping all hosts
+     action: ping
+   - name: This task is to remove or install packages in all RedHat hosts
+     yum: name=wget state=absent
+   - name: This task is to remove or install packages in all RedHat hosts
+     yum: name=wget state=present
+   - name: This task is to remove or install packages in all RedHat hosts
+     yum: name=vim state=latest
+   - name: This task is to remove or install packages in all RedHat hosts
+     yum: name=httpd state=latest
+   - name: This task is to copy a file from ansible-master to all hosts
+     copy: src=web.xml dest=web.xml
