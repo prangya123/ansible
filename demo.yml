@@ -1,0 +1,11 @@
+---
+ - hosts: all
+   become: yes
+   tasks:
+   - action: ping
+   - yum: name=wget state=absent
+   - yum: name=wget state=present
+   - yum: name=vim state=latest
+   - yum: name=httpd state=latest
+   - copy: src=web.xml dest=web.xml
+
