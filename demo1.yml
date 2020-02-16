@@ -16,3 +16,5 @@
      yum: name=httpd state=latest
    - name: This task is to copy a file from ansible-master to all hosts
      copy: src=web.xml dest=web.xml
+   - name: This task is to create a new file in all hosts
+     file: path=demonew.txt state=touch
