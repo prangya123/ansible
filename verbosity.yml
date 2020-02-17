@@ -1,0 +1,16 @@
+---
+ - name: This is a simple play for demo
+   hosts: all
+   tasks:
+   - name: This task is to print verbosity all
+     #debug: msg="This is print message using debug module"
+     debug:
+      msg:
+       - "This is print message using debug module"
+       - "muliti-line msg"
+   - name: This task to run with --vv to see verbose
+     debug:
+      msg:
+       - "This should run with --vv"
+      verbosity: 2
+#to run: ansible-playbook verbosity.yml -vv
