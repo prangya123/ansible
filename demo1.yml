@@ -18,3 +18,9 @@
      copy: src=web.xml dest=web.xml
    - name: This task is to create a new file in all hosts
      file: path=demonew.txt state=touch
+   - debug:
+      msg: 
+       - "This is to print a message using debug module"
+       - "This is to print line2 using debug module"
+      
+   - debug: msg="one way to do msg"
