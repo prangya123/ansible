@@ -1,0 +1,15 @@
+--
+ - name: This is a simple play for demo
+   hosts: all
+   become: yes
+   gather_facts: false
+   tasks:
+   - name: This task is to ping all hosts
+     action: ping
+   - name: This task is to use debug module a file
+     #debug: msg="This is print message using debug module"
+     debug:
+      msg:
+       - "This is print message using debug module"
+       - "muliti-line msg"
+~                          
